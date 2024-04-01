@@ -44,7 +44,7 @@ class _SplashViewState extends State<SplashView> {
           ),
           Image.asset(
             "assets/img/app_logo.png",
-            width: context.width * 0.25,
+            width: context.width * 0.5,
           )
         ],
       ),
