@@ -3,11 +3,13 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:safar/common/color_extension.dart';
 import 'package:safar/common_widget/icon_title_button.dart';
 import 'package:safar/common_widget/round_button.dart';
 import 'package:safar/view/home/reason_view.dart';
+import 'package:safar/view/home/tip_detail_view.dart';
 
 class RunRideView extends StatefulWidget {
   const RunRideView({super.key});
@@ -573,6 +575,9 @@ class _RunRideViewState extends State<RunRideView> with OSMMixinObserver {
                       ]),
                   child: Column(
                     children: [
+                      const SizedBox(
+                        height: 15,
+                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 15),
                         child: Text(
@@ -582,6 +587,9 @@ class _RunRideViewState extends State<RunRideView> with OSMMixinObserver {
                               color: TColor.primaryText, fontSize: 18),
                         ),
                       ),
+                      const SizedBox(
+                        height: 15,
+                      ),
                       Text(
                         //"\$12.50",
                         "Rockdean",
@@ -589,18 +597,38 @@ class _RunRideViewState extends State<RunRideView> with OSMMixinObserver {
                         style: TextStyle(
                           color: TColor.primaryText,
                           fontSize: 25,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 8,
+                      ),
+                      RatingBar.builder(
+                        initialRating: 3,
+                        minRating: 1,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding:
+                            const EdgeInsets.symmetric(horizontal: 4.0),
+                        itemBuilder: (context, _) => const Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                        ),
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 30,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child:
-                            RoundButton(title: "RATE RIDER", onPressed: () {}),
+                        child: RoundButton(
+                            title: "RATE RIDER",
+                            onPressed: () {
+                              context.push(const TipDetailsView());
+                            }),
                       ),
                       const SizedBox(
                         height: 25,
