@@ -4,8 +4,11 @@ import 'package:safar/common_widget/icon_title_cell.dart';
 import 'package:safar/common_widget/menu_row.dart';
 import 'package:safar/view/login/welcome_view.dart';
 import 'package:safar/view/menu/earning_view.dart';
+import 'package:safar/view/menu/ratings_view.dart';
 import 'package:safar/view/menu/service_type_view.dart';
+import 'package:safar/view/menu/settinga_view.dart';
 import 'package:safar/view/menu/summary_view.dart';
+import 'package:safar/view/menu/wallet_view.dart';
 
 class MenuView extends StatefulWidget {
   const MenuView({super.key});
@@ -92,7 +95,7 @@ class _MenuViewState extends State<MenuView> {
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      // context.push(const RatingsView());
+                                      context.push(const RatingsView());
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
@@ -139,7 +142,7 @@ class _MenuViewState extends State<MenuView> {
                             title: "Wallet",
                             icon: "assets/img/wallet.png",
                             onPressed: () {
-                              // context.push(const WalletView());
+                              context.push(const WalletView());
                             }),
                       ],
                     )
@@ -226,7 +229,7 @@ class _MenuViewState extends State<MenuView> {
                       title: "Settings",
                       icon: "assets/img/setting.png",
                       onPressed: () {
-                        // context.push(const SettingsView());
+                        context.push(const SettingsView());
                       }),
                   MenuRow(
                       title: "Logout",
