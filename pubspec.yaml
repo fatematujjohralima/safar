@@ -41,6 +41,8 @@ dependencies:
   flutter_osm_plugin: ^0.70.4
   flutter_timer_countdown: ^1.0.7
   flutter_rating_bar: ^4.0.1
+  # fl_chart: ^0.67.0
+  fl_chart: ^0.65.0
 
 dev_dependencies:
   flutter_test:

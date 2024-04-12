@@ -3,6 +3,7 @@ import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 import 'package:safar/common/color_extension.dart';
 import 'package:safar/common_widget/icon_title_subtitle_button.dart';
 import 'package:safar/view/home/tip_request_view.dart';
+import 'package:safar/view/menu/menu_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -309,7 +310,7 @@ class _HomeViewState extends State<HomeView> {
                           children: [
                             InkWell(
                               onTap: () {
-                                //context.push(const MenuView());
+                                context.push(const MenuView());
                               },
                               child: Container(
                                 margin: const EdgeInsets.only(left: 10),
